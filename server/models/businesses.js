@@ -1,11 +1,11 @@
 const businesses = [{
   id: 1,
-  name: 'andela',
-  image: 'andela.jpg',
-  description: 'a software development company changing the face of africa',
-  category: 'ICT',
-  location: 'lagos',
-  email: 'andela@andela.com',
+  name: 'Cellulike',
+  image: 'solar.jpg',
+  description: ' Pay-As-You-Go solar distribution company in Africa',
+  category: 'Electricity',
+  location: 'Tanzania',
+  email: 'info@cellulike.co.tz',
 },
 {
   id: 2,
@@ -14,7 +14,17 @@ const businesses = [{
   description: 'a footwear industry located in africa',
   category: 'Clothing',
   location: 'Addis Ababba',
-  website: 'https://www.solerebels.com/',
-}];
+  email: 'bethlehemtilahun@solerebels.com',
+},
+{
+  id: 3,
+  name: 'Transport and Haulage',
+  image: 'Haulage.jpg',
+  description: 'a company responsible for easy transfer of goods and services',
+  category: 'Transportation',
+  location: 'lagos',
+  email: 'awesome@haulage.com',
+}
+];
 
 export default businesses;
