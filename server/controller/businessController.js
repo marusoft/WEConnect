@@ -25,8 +25,7 @@ class Businesses {
    * @param {*} res
    */
   static registerBusiness(req, res) {
-    if (req.body.businessname && req.body.image && req.body.description &&
-      req.body.category && req.body.location && req.body.email) {
+    
       businesses.push({
         name: req.body.businessname,
         image: req.body.image,
