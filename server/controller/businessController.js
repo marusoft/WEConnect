@@ -113,6 +113,38 @@ class Businesses {
       message: 'Business not found'
     });
   }
+  /**
+   * @returns {object} Get all businesses with the specified location and category
+   * @param {*} req
+   * @param {*} res
+   * @param {*} next
+   */
+  static filterSearch(req, res, next) {
+    const result = [];
+    const { category, location } = req.query;
+    for (let i = 0; i < businesses.length; i += 1) {
+      if (category === businesses[i].category &&
+        location === businesses[i].location) {
+      // Get businesses in a particlar location within a category
+        result.push(businesses[i]);
+      } else if (!category && location === businesses[i].location) {
+      // Get all businesses within a location
+        result.push(businesses[i]);
+      } else if (category === businesses[i].category && !location) {
+      // Get all businesses within a category
+        result.push(businesses[i]);
+      } else if (!category && !location) {
+      // Go to next route
+        next();
+      }
+    }
+    return res.status(200)
+      .send({
+        searchResult: result,
+        message: 'Great, your search was successful',
+        status: 'Success',
+      });
+  }
 
 }
 export default Businesses;
