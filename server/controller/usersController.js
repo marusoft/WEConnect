@@ -6,7 +6,7 @@ class Users {
   // Register a user or signup user
 
   /**
-   * @returns {Object} RegisterUser
+   * @returns {object} RegisterUser
    * @param {*} req
    * @param {*} res
    */
