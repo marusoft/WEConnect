@@ -29,7 +29,8 @@ class Businesses {
       if (business.id === parseInt(req.params.businessId, 10)) {
         return res.status(200).send({
           status: 'Awesome',
-          business: businesses[i]
+          business: businesses[i],
+          message: 'success',
         });
       }
     }
@@ -47,21 +48,26 @@ class Businesses {
    * @param {*} res
    */
   static registerBusiness(req, res) {
-    const newBusiness = {
-      id: businesses.length + 1,
-      businessname: req.body.businessname,
-      image: req.body.image,
-      description: req.body.description,
-      location: req.body.location,
-      category: req.body.category,
-      email: req.body.email,
+    const {
+      name, description, photo, category, location, email,
+    } = req.body;
+    const id = businesses.length + 1;
+    const createBusiness = {
+      id,
+      name,
+      photo,
+      location,
+      category,
+      description,
+      email,
     };
-    businesses.push(newBusiness);
-    return res.status(201).json({
-      status: 'Success',
-      message: 'Business created successfully',
-      business: newBusiness
-    });
+    businesses.push(createBusiness);
+    res.status(201)
+      .send({
+        business: createBusiness,
+        status: 'Success',
+        message: 'Business created successfully',
+      });
   }
   // Update Business Profile
   /**
@@ -71,18 +77,17 @@ class Businesses {
    */
   static updateBusinessProfile(req, res) {
     for (let i = 0; i < businesses.length; i += 1) {
-      const business = businesses[i];
-      if (business.id === parseInt(req.params.businessId, 10)) {
-        business.businessname = req.body.businessname;
-        business.image = req.body.image;
-        business.description = req.body.description;
-        business.category = req.body.category;
-        business.location = req.body.location;
-        business.email = req.body.email;
-        return res.status(201).send({
+      if (businesses[i].id === parseInt(req.params.businessId, 10)) {
+        businesses[i].name = req.body.name;
+        businesses[i].photo = req.body.photo;
+        businesses[i].description = req.body.description;
+        businesses[i].category = req.body.category;
+        businesses[i].location = req.body.location;
+        businesses[i].email = req.body.email;
+        return res.status(201).json({
           status: 'Success',
-          message: 'Business profile updated successfully',
-          business,
+          businesses,
+          message: 'Business profile updated successfully'
         });
       }
     }
@@ -99,10 +104,9 @@ class Businesses {
    */
   static removeBusiness(req, res) {
     for (let i = 0; i < businesses.length; i += 1) {
-      const business = businesses[i];
-      if (business.id === parseInt(req.params.businessId, 10)) {
+      if (businesses[i].id === parseInt(req.params.businessId, 10)) {
         businesses.splice(i, 1);
-        return res.status(200).send({
+        return res.status(200).json({
           status: 'Awesome',
           message: 'Business deleted successfully',
         });

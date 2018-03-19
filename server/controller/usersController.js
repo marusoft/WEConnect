@@ -6,27 +6,20 @@ class Users {
   // Register a user or signup user
 
   /**
-   * @returns {object} RegisterUser
+   * @returns {object} registerUser
    * @param {*} req
    * @param {*} res
    */
   static registerUsers(req, res) {
-    const userName = req.body.username;
-    if (req.body.username && req.body.email && req.body.password) {
-      users.push({
-        name: req.body.username,
-        emailAddress: req.body.email,
-        password: req.body.password
-      });
-      return res.status(201).json({
-        message: `${userName} created successfully`
-      });
-    }
-    return res.status(400).json({
-      message: 'please supply an input',
-      error: true
+    users.push({
+      id: users.length + 1,
+      name: req.body.name,
+      emailAddress: req.body.emailAddress,
+      password: req.body.password
     });
-
+    return res.status(201).json({
+      message: 'account created successfully,'
+    });
   }
   // login a user
   /**
@@ -36,14 +29,14 @@ class Users {
    */
   static loginUsers(req, res) {
     for (let i = 0; i < users.length; i += 1) {
-      if (users[i].name === req.body.username && users[i].password === req.body.password) {
+      if (users[i].name === req.body.name && users[i].password === req.body.password) {
         return res.status(200).json({
-          message: `Welcome ${users[i].name}!`
+          message: 'Account login successful'
         });
       }
     }
     return res.status(401).json({
-      message: 'please sign up'
+      message: 'please sign up or supply the correct input'
     });
   }
 }

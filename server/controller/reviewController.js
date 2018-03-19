@@ -5,22 +5,23 @@ import businesses from '../models/businesses';
  */
 class Reviews {
 /**
-* @returns {object}  addAreviewForAbusiness
+* @returns {object}  addReviewForBusiness
 * @param {*} req
 * @param {*} res
 */
-  static addAreviewForAbusiness(req, res) {
+  static addReviewForBusiness(req, res) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.businessId, 10)) {
         reviews.push({
           id: reviews.length + 1,
-          businessId: req.body,
-          content: req.body,
+          reviewer: req.body.reviewer,
+          reviewContent: req.body.reviewContent,
         });
-        return res.status(201).send({
+        return res.status(201).json({
           status: 'Success',
-          message: 'Review added successfully',
-          review: reviews[reviews.length - 1]
+          businesses: businesses[i],
+          reviews,
+          message: 'Review added successfully'
         });
       }
     }
@@ -30,7 +31,7 @@ class Reviews {
     });
   }
   /**
-  * @returns {object}  Get all reviews for a business
+  * @returns {object}  getAll reviews for a business
   * @param {*} req
   * @param {*} res
   */
@@ -46,8 +47,8 @@ class Reviews {
         }
         return res.status(200).send({
           message: 'Success, review found',
-          business: businesses[i],
-          reviews: review
+          businesses: businesses[i],
+          reviews
         });
       }
     }

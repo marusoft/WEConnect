@@ -1,7 +1,7 @@
 const businesses = [{
   id: 1,
   name: 'Cellulike',
-  image: 'solar.jpg',
+  photo: 'solar.jpg',
   description: ' Pay-As-You-Go solar distribution company in Africa',
   category: 'Electricity',
   location: 'Tanzania',
@@ -10,7 +10,7 @@ const businesses = [{
 {
   id: 2,
   name: 'soleRebels',
-  image: 'footer.jpg',
+  photo: 'footer.jpg',
   description: 'a footwear industry located in africa',
   category: 'Clothing',
   location: 'Addis Ababba',
@@ -19,7 +19,7 @@ const businesses = [{
 {
   id: 3,
   name: 'Transport and Haulage',
-  image: 'Haulage.jpg',
+  photo: 'Haulage.jpg',
   description: 'a company responsible for easy transfer of goods and services',
   category: 'Transportation',
   location: 'lagos',
