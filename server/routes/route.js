@@ -1,11 +1,11 @@
 import Businesses from '../controller/businessController';
 import Users from '../controller/usersController';
 import Reviews from '../controller/reviewController';
-import FilterSearch from '../middleware/filterSearchValidator';
+import FilterSearch from '../middlewares/filterSearchValidator';
 import {
   businessRequiredInputs, userRequiredInput,
   reviewRequiredInput,
-} from '../middleware/index';
+} from '../middlewares/index';
 
 
 export default (app) => {
