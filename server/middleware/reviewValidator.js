@@ -8,6 +8,10 @@
  */
 const reviewRequiredInput = (req, res, next) => {
   req.checkBody({
+    reviewer: {
+      options: true,
+      errorMessage: 'Content is required'
+    },
     reviewContent: {
       options: true,
       errorMessage: 'Content is required'
