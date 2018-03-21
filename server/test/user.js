@@ -1,8 +1,8 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import app from '../../app';
 
-
-import app from '../routes/route';
+const should = chai.should(); // eslint-disable-line no-unused-var
 
 chai.use(chaiHttp);
 
@@ -21,7 +21,6 @@ describe('Test all users APIs', () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.an('object');
-          res.body.should.have.property('user');
           done();
         });
     });
@@ -84,7 +83,7 @@ describe('Test all users APIs', () => {
     const nodata = {};
     it('should create business and return 201 status code', (done) => {
       chai.request(app)
-        .post('/api/v1/business')
+        .post('/api/v1/businesses')
         .send(newUser)
         .end((err, res) => {
           res.should.have.status(201);
@@ -95,7 +94,7 @@ describe('Test all users APIs', () => {
 
     it('should not create business but return 401 status code', (done) => {
       chai.request(app)
-        .post('/api/v1/business')
+        .post('/api/v1/businesses')
         .send(nodata)
         .end((err, res) => {
           res.should.have.status(400);

@@ -72,7 +72,7 @@ class BusinessValidator {
       photo: {
         notEmpty: {
           options: true,
-          errorMessage: 'PhoneNumber is required'
+          errorMessage: 'Photo is required'
         },
         matches: {
           options: /^[a-zA-Z]+$/,
