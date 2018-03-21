@@ -1,8 +1,10 @@
 body {font-family: 'Lato', sans-serif;}
-h1, h2, h3, h4, h5, h6 {
+h2, h3, {
   font-family: 'Montserrat', sans-serif;
 }
-.inner-section {padding: 100px 0;}
+.inner-section {
+  padding: 100px 0;
+}
 .section-head {
   font-size: 2.75em;
   text-align: center;
@@ -14,7 +16,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 20px 
   auto;position: 
   relative;display: flex;justify-content: center;align-items: center;}
-.star-light:after {content: '\f005';font-family: 'fontawesome';font-style: normal;font-weight: 400;line-height: 1;font-size: 30px;padding: 5px;}
+.star-light:after {
+  content: '\f005';
+  font-family: 'fontawesome';
+  font-style: normal;
+  font-weight: 400;line-height: 1;font-size: 30px;padding: 5px;}
 .inner-section .star-light {
   margin-bottom: 50px;
 }
@@ -22,7 +28,13 @@ span.italic {
   font-style: 
   italic;font-size: 14px;color: #999;}
 .btn {border-radius: 0;font-weight: bold;}
-.btn-outline {color: #fff;border: 1px solid #fff;padding: 10px 25px;font-size: 20px;background-color: transparent;margin-top: 20px;}
+.btn-outline {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 25px;
+  font-size: 20px;
+  background-color: transparent;
+  margin-top: 20px;}
 .btn-outline:hover {
   color: #fff;
 }
@@ -105,7 +117,229 @@ span.italic {
 @media screen and (max-width: 375px) {
   .section-head {font-size: 2rem;}
 }
-/* == Max - Width 320 px == */
-@media screen and (max-width: 320px) {
-  #pri .nav > li a.btn-outline {font-size: 1rem;}
+
+/* Content section */
+#mycontent {
+  margin-top: 30px;
+  height: 600px;
+  overflow: hidden;
+  background-image: url(../img/business/energy.jpg);
+  background-size: cover;
+}
+
+.alimi {
+  text-align: center;
+  color: #fff;
+  margin-top: 200px;
+  padding: 30px;
+}
+h3{
+  font-style: italic;
+}
+p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
+/* business section */
+.inner-section {
+  padding: 100px 0;
+}
+.business-head {
+  font-size: 2.75em;
+  text-align: center;
+  font-weight: bold;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+
+
+/*signin form css*/
+#signin {
+  margin-top: 70px;
+  height: 518px;
+  overflow: hidden;
+  background-image: url(../img/business/k.jpg);
+  background-size: cover;
+  text-align: center;
+  margin-bottom: -20px;
+
+}
+#signinbutton{
+  margin-top: 15px;
+  margin-bottom:-1px;
+}
+
+h4{
+  margin-top:120px;
+  margin-bottom: 20px;
+}
+
+#button{
+  padding-left: 80px;
+  margin-bottom: 30px;
+}
+
+input[type=text],input[type=password],input[type=cpassword]{
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-color: #00ccff;
+  box-sizing: border-box;
+}
+
+#platform{
+  padding-left: 100px;
+}
+
+#tag{
+  margin-bottom:-10px;
+}
+
+/*signup form css*/
+#signup {
+  margin-top: 68px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: -42px;
+  background-image: url(../img/business/k6.jpg);
+  background-size: cover;
+  height: 544px;
+}
+#signupbutton{
+  margin-top: -3px;
+}
+
+h1{
+  padding-top: 45px;
+}
+
+
+/*catalogue*/
+#search {
+  margin-top: 69px;
+  margin-bottom: -30px;
+  height: 535px;
+  overflow: hidden;
+  background-size: cover;
+  text-align: center;
+  background-image: url(../img/business/k6.jpg);
+}
+
+#catalogbuttun{
+  margin-top: -5px;
+}
+
+#searchcategory{
+  width: 400px;
+}
+#searchlocate{
+  width: 400px;
+}
+
+/*register form css*/
+#register {
+  margin-top: 67px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: -24px;
+  background-image: url(../img/business/Haulage.jpg);
+  background-size: cover;
+  height: 530px;
+  
+}
+#registerbutton{
+ margin-top: 15px;
+}
+
+#textregionregister{
+  border-color: #00ccff;
+  width: 445px;
+  margin: 10px;
+}
+#textregionupdate{
+  border-color: #00ccff;
+  width: 440px;
+  margin: 10px;
+}
+
+.btn{
+  margin: 25px;
+}
+
+
+/* solerebels style*/
+
+#profileback{
+  background-color: #e6ffff;
+  margin-top: 110px;
+  border:1px solid #ffffe6;
+  height: 70%;
+}
+
+img{
+  height:150px;
+  width: 450px;
+}
+
+
+#bprofile{
+  margin-top: 5px;
+  text-align: center;
+}
+#profile{
+  margin-top: 40px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: -35px;
+  background-image: url(../img/business/k6.jpg);
+  background-size: cover;
+  height: 755px;
+}
+#breview{
+  margin-top: 100px;
+  text-align: center;
+}
+
+h6{
+  text-align: center;
+}
+#aboutbusiness{
+  margin:5px;
+}
+
+#review{
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+#update{
+  margin-top: 40px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: -35px;
+  background-image: url(../img/business/k6.jpg);
+  background-size: cover;
+  height: 755px;
+  
+}
+#updatebutton{
+ margin-top: -10px;
+}
+h2{
+  padding-top: 50px;
+}
+
+#footer{
+  background-color:#1E90FF;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.text-xs-center {
+  color: #ffffff;
+  margin-top:15px;
 }
