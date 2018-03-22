@@ -5,7 +5,9 @@ h1,h2, h3, {
   font-family: 'Montserrat', sans-serif;
 }
 
-
+h1{
+  opacity: 0.5px;;
+}
 
 .inner-section {
   padding: 100px 0;
@@ -67,7 +69,9 @@ nav{
 
 #top-header {
   position: fixed;
-  top: 0;left: 0;right: 0;z-index: 9;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);}
+  top: 0;left: 0;right: 0;z-index: 9;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);}
 #top-header > nav {
   background-color: #2C3E50;
   border-radius: 0;
