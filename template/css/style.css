@@ -316,6 +316,11 @@ img{
   height:150px;
   width: 450px;
 }
+#change{
+  background-color: #e6ffff;
+  opacity: 0.5;
+  padding: 10px;
+}
 
 
 #bprofile{
