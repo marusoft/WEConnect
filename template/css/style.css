@@ -1,7 +1,12 @@
-body {font-family: 'Lato', sans-serif;}
+body {
+  font-family: 'Lato', sans-serif;
+}
 h1,h2, h3, {
   font-family: 'Montserrat', sans-serif;
 }
+
+
+
 .inner-section {
   padding: 100px 0;
 }
@@ -56,6 +61,9 @@ span.italic {
 .no-padding {
   padding: 0 !important;
 }
+nav{
+  height: 80px;
+}
 
 #top-header {
   position: fixed;
@@ -79,7 +87,7 @@ span.italic {
 #top-header > nav .navbar-nav {
   float: right;
   margin-right: 20px;
-  height: 50px;
+  height: 20px;
   line-height: 35px;
 }
 #top-header > nav form {margin: 8px 0;}
@@ -182,8 +190,8 @@ p {
   font-size: 2.75em;
   text-align: center;
   font-weight: bold;
-  margin-top: -20px;
-  margin-bottom: 20px;
+  margin-top: -10px;
+  margin-bottom: 100px;
 }
 
 
@@ -233,13 +241,13 @@ input[type=text],input[type=password],input[type=cpassword]{
 
 /*signup form css*/
 #signup {
-  margin-top: 68px;
-  overflow: hidden;
-  text-align: center;
-  margin-bottom: -42px;
-  background-image: url(../img/business/k4.jpg);
-  background-size: cover;
-  height: 544px;
+ text-align: center;
+ margin-top: 80px;
+ margin-bottom: 100px;
+ border: solid 1px #000000;
+ margin-left: 25%;
+ margin-right: 25%;
+  
 }
 #signupbutton{
   margin-top: -3px;
@@ -247,6 +255,11 @@ input[type=text],input[type=password],input[type=cpassword]{
 
 h1{
   padding-top: 45px;
+}
+
+
+.carousel-item{ 
+  height: 650px;
 }
 
 
