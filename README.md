@@ -9,3 +9,8 @@ Create three directories in your local git repo
 template - UI templates for the front-end in HTML/CSS/JS
 server -back-end implementation in NodeJS-Express
 client - front-end implementation in ReactJS and Redux
+
+
+
+WEConnect App UI Template
+The gh-pages branch contains the template UI link https://marusoft.github.io/WEConnect/template
