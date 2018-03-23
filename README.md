@@ -5,7 +5,7 @@ Getting Started/Project Setup
 
 
 
-Create three directories in your local git repo
+Create three directories on local git repo
 template - UI templates for the front-end in HTML/CSS/JS
 server -back-end implementation in NodeJS-Express
 client - front-end implementation in ReactJS and Redux
