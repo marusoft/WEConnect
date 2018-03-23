@@ -1,9 +1,7 @@
 # WEConnect
 WeConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.
 
-Getting Started/Project Setup
-
-
+**Getting Started/Project Setup**
 
 Create three directories on local git repo
 template - UI templates for the front-end in HTML/CSS/JS
@@ -12,5 +10,30 @@ client - front-end implementation in ReactJS and Redux
 
 
 
-WEConnect App UI Template
+**WEConnect App UI Template**
 The gh-pages branch contains the template UI link https://marusoft.github.io/WEConnect/template
+
+
+
+**Getting Started**
+Before installing, Clone this repo and install Node.js.
+
+**Installation**
+
+Install
+npm install 
+
+**Features**
+
+Users can view businesses
+Users can post a business
+Users can review a business
+Users can delete a business
+Users can search for a business
+Users can search for a business by category
+Users can search for a business by location
+
+**Run App( with dummy-data)**
+
+npm run start
+Run Test
