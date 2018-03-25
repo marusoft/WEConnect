@@ -5,8 +5,7 @@ import Reviews from '../controller/reviewController';
 import FilterSearch from '../middleware/filterSearchValidator';
 import UserValidation from '../middleware/userValidator';
 import BusinessValidator from '../middleware/businessValidator';
-import ReviewValidator from '../middleware/reviewValidator'
-
+import ReviewValidator from '../middleware/reviewValidator';
 
 
 export default (app) => {
