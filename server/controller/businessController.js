@@ -17,7 +17,7 @@ class Businesses {
     });
   }
 
-  // Get a business
+
   /**
    * @returns {object} getABusiness
    * @param {*} req
@@ -40,7 +40,6 @@ class Businesses {
     });
   }
 
-  // Register a business
 
   /**
    * @returns {object} RegisterBusiness
@@ -69,7 +68,7 @@ class Businesses {
         message: 'Business created successfully',
       });
   }
-  // Update Business Profile
+
   /**
    * @returns {object} UpdateBusinessProfile
    * @param {*} req
@@ -96,7 +95,7 @@ class Businesses {
       message: 'Business not found'
     });
   }
-  // Remove a business
+
   /**
    * @returns {object} RemoveBusiness
    * @param {*} req

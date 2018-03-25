@@ -25,6 +25,7 @@ class ReviewValidator {
       return res.status(400).send({ message: errors[0].msg });
     }
     next();
+
   }
 }
 export default ReviewValidator;
