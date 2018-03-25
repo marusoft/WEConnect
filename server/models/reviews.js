@@ -1,4 +1,3 @@
-// Review in-memory data
 const reviews = [{
   id: 1,
   reviewer: 'solace',

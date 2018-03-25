@@ -3,7 +3,6 @@ import users from '../models/users';
  * @class Users
 */
 class Users {
-  // Register a user or signup user
 
   /**
    * @returns {object} registerUser
@@ -21,7 +20,7 @@ class Users {
       message: 'account created successfully,'
     });
   }
-  // login a user
+
   /**
    * @returns {Object} loginUser
    * @param {*} req
