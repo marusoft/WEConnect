@@ -20,4 +20,4 @@ app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the beginning of awesome things.',
 }));
 
-module.exports = app;
+export default app;

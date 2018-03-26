@@ -11,7 +11,7 @@ const reviews = [{
 {
   id: 3,
   reviewer: 'marusoft',
-  reviewContent: 'The best footerwear designer!',
+  reviewContent: 'One of the best software enginer!',
 },
 {
   id: 4,
