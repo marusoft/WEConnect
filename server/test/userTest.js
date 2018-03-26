@@ -3,21 +3,20 @@ import chaiHttp from 'chai-http';
 import app from '../../app';
 
 const should = chai.should(); // eslint-disable-line no-unused-var
-
 chai.use(chaiHttp);
 
 
 describe('Test all users APIs', () => {
-  describe('/POST route', () => {
-    const newuser = {
+  describe('/POST route register user', () => {
+    const newUser = {
       name: 'solace',
       emailAddress: 'solace@gmail.com',
       password: 'alimikehinde',
     };
-    it('should return successfull with status 200', (done) => {
+    it('should successfully register a user if user does not exist with status 200', (done) => {
       chai.request(app)
         .post('/api/v1/auth/signup')
-        .send(newuser)
+        .send(newUser)
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.an('object');
@@ -25,7 +24,7 @@ describe('Test all users APIs', () => {
         });
     });
 
-    it('should return with 400 status code', (done) => {
+    it('should return an error with 400 status code', (done) => {
       chai.request(app)
         .post('/api/v1/auth/signup')
         .send()
@@ -45,7 +44,7 @@ describe('Test all users APIs', () => {
     };
     const notUser = {
       email: 'wrong',
-      password: 'fake@gmail.com'
+      password: 'unknown@gmail.com'
     };
     it('should return welcome with username and 200 status code', (done) => {
       chai.request(app)
@@ -97,10 +96,42 @@ describe('Test all users APIs', () => {
         .post('/api/v1/businesses')
         .send(nodata)
         .end((err, res) => {
-          res.should.have.status(400);
+          res.should.have.status(401);
           res.body.should.be.a('object');
         });
       done();
+    });
+    describe('Test API', () => {
+      it('Should return 200 for the default route', (done) => {
+        chai.request(app)
+          .get('/')
+          .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+
+          });
+        done();
+      });
+      it('Should return 404 for routes not specified', (done) => {
+        chai.request(app)
+          .get('/another/undefined/route')
+          .end((err, res) => {
+            res.should.have.status(404);
+            res.body.should.be.a('object');
+
+          });
+        done();
+      });
+      it('Undefined Routes Should Return 404', (done) => {
+        chai.request(app)
+          .post('/another/undefined/route')
+          .send({ random: 'random' })
+          .end((err, res) => {
+            res.should.have.status(404);
+            res.body.should.be.a('object');
+          });
+        done();
+      });
     });
   });
 });

@@ -24,6 +24,24 @@ const businesses = [{
   category: 'Transportation',
   location: 'lagos',
   email: 'awesome@haulage.com',
+},
+{
+  id: 4,
+  name: 'Zenithal',
+  photo: 'Zenithal.jpg',
+  description: 'pre-schooler and basic',
+  category: 'Education',
+  location: 'lagos',
+  email: 'zenithal@gmail.com',
+},
+{
+  id: 5,
+  name: 'Seven and Eight Nig Ltd',
+  photo: '7/8.jpg',
+  description: 'a company that satchet and bottled water',
+  category: 'Food',
+  location: 'lagos',
+  email: 'seven&eight@gmail.com',
 }
 ];
 
