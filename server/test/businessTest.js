@@ -111,3 +111,92 @@ describe('DELETE /businesses/<businessId> API to remove a business', () => {
     done();
   });
 });
+
+describe('register a business POST /businesses/ ', () => {
+  it('Should return 201 for a sucessful post', (done) => {
+    chai.request(app)
+      .post('/api/v1/businesses')
+      .send({
+        id: 4,
+        name: 'Zenithal',
+        photo: 'Zenithal.jpg',
+        description: 'pre-schooler and basic',
+        category: 'Education',
+        location: 'lagos',
+        email: 'zenithal@gmail.com',
+
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business added successfully');
+      });
+    done();
+  });
+
+  it('Should return 400 for post with invalid email', (done) => {
+    chai.request(app)
+      .post('/api/v1/businesses')
+      .send({
+        id: 4,
+        name: 'Zenithal',
+        photo: 'Zenithal.jpg',
+        description: 'school for basic and pre-schooler ',
+        category: 'Education',
+        location: 'lagos',
+        email: '  @gmail.com',
+
+      })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business description cannot be empty');
+      });
+    done();
+  });
+});
+
+describe('register a business POST /businesses/ ', () => {
+  it('Should return 201 for a sucessful post', (done) => {
+    chai.request(app)
+      .post('/api/v1/businesses')
+      .send({
+        id: 4,
+        name: 'Zenithal',
+        photo: 'Zenithal.jpg',
+        description: 'pre-schooler and basic',
+        category: 'Education',
+        location: 'lagos',
+        email: 'zenithal@gmail.com',
+
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business added successfully');
+      });
+    done();
+  });
+
+  it('Should return 400 for post without a specified location', (done) => {
+    chai.request(app)
+      .post('/api/v1/businesses')
+      .send({
+        id: 4,
+        name: 'Zenithal',
+        photo: 'Zenithal.jpg',
+        description: 'pre-schooler and basic ',
+        category: 'Education',
+        location: ' ',
+        email: 'zenithal@gmail.com',
+
+      })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business description cannot be empty');
+      });
+    done();
+  });
+});
+
