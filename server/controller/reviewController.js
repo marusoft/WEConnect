@@ -54,7 +54,7 @@ class Reviews {
     }
     return res.status(404).send({
       status: 'Fail',
-      message: 'Business not found'
+      message: 'Business review not found'
     });
   }
 
