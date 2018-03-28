@@ -33,6 +33,33 @@ describe('POST /businesses/<businessid>/reviews Add a review for a business ', (
     done();
   });
 });
+describe('POST /businesses/<businessid>/reviews Add a review for a business ', () => {
+  it('Should return 201 if successful', (done) => {
+    chai.request(app)
+      .post('/api/v1/businesses/2/reviews')
+      .send({
+        id: 3,
+        reviewer: '',
+        reviewContent: 'One of the best software enginer!',
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.to.have.property('status').equal('Success');
+      });
+    done();
+  });
+  it('Should return 400 if any reviewer is not available', (done) => {
+    chai.request(app)
+      .post('/api/v1/businesses/2/reviews')
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.eql('Fail');
+        res.body.should.have.a.message.to.equal('No input content');
+
+      });
+    done();
+  });
+});
 
 describe('GET /businesses/<businessid>/reviews Get all reviews for a business', () => {
   it('Should return 200 for getting reviews', (done) => {
