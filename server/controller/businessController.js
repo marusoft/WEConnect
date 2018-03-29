@@ -16,8 +16,6 @@ class Businesses {
       getBusinesses: businesses,
     });
   }
-
-
   /**
    * @returns {object} getABusiness
    * @param {*} req
@@ -60,14 +58,34 @@ class Businesses {
       description,
       email,
     };
-    businesses.push(createBusiness);
-    res.status(201)
-      .send({
-        business: createBusiness,
-        status: 'Success',
-        message: 'Business created successfully',
+    const peruseBusiness = businesses.find(business => (business.name.toLowerCase()
+      === name.toLowerCase() && business.photo.toLowerCase() === photo.toLowerCase())
+      || business.email === email);
+    if (!peruseBusiness) {
+      businesses.push(createBusiness);
+      res.status(201)
+        .send({
+          business: createBusiness,
+          status: 'Success',
+          message: 'Business created successfully',
+        });
+    }
+    if (peruseBusiness) {
+      if (peruseBusiness.photo === photo) {
+        return res.status(409)
+          .json({
+            message: `Photo logo '${photo}' is in use by another business`,
+            status: 'Fail',
+          });
+      }
+    }
+    return res.status(409)
+      .json({
+        message: `The business '${peruseBusiness.name}' already exist at this address`,
+        status: 'Fail',
       });
   }
+
 
   /**
    * @returns {object} UpdateBusinessProfile
@@ -75,25 +93,27 @@ class Businesses {
    * @param {*} res
    */
   static updateBusinessProfile(req, res) {
-    for (let i = 0; i < businesses.length; i += 1) {
-      if (businesses[i].id === parseInt(req.params.businessId, 10)) {
-        businesses[i].name = req.body.name;
-        businesses[i].photo = req.body.photo;
-        businesses[i].description = req.body.description;
-        businesses[i].category = req.body.category;
-        businesses[i].location = req.body.location;
-        businesses[i].email = req.body.email;
-        return res.status(201).json({
+    const peruseBusiness = businesses.find(business =>
+      business.id === parseInt(req.params.businessId, 10));
+    if (peruseBusiness) {
+      peruseBusiness.name = req.body.name;
+      peruseBusiness.description = req.body.description;
+      peruseBusiness.location = req.body.location;
+      peruseBusiness.category = req.body.category;
+      peruseBusiness.photo = req.body.photo;
+      peruseBusiness.email = req.body.ema;
+      return res.status(200)
+        .json({
+          peruseBusiness,
           status: 'Success',
-          businesses,
-          message: 'Business profile updated successfully'
+          message: 'Business updated successfully',
         });
-      }
     }
-    return res.status(404).send({
-      status: 'Fail',
-      message: 'Business not found'
-    });
+    return res.status(404)
+      .json({
+        status: 'Error',
+        message: 'Business not found',
+      });
   }
 
   /**
