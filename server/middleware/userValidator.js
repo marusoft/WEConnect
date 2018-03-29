@@ -13,7 +13,7 @@ class UserValidation {
   */
   static userInput(req, res, next) {
     req.checkBody({
-      name: {
+      username: {
         notEmpty: {
           options: true,
           errorMessage: 'name is required'

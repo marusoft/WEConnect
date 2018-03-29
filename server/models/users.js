@@ -1,24 +1,24 @@
 const users = [{
   id: 1,
-  name: 'marusoft',
+  username: 'marusoft',
   emailAddress: 'marusoft@gmail.com',
   password: 'marusoft123',
 },
 {
   id: 2,
-  name: 'optimist',
+  username: 'optimist',
   emailAddress: 'optimist@gmail.com',
   password: 'optimist123',
 },
 {
   id: 3,
-  name: 'solace',
+  username: 'solace',
   emailAddress: 'solace@gmail.com',
   password: 'solace123',
 },
 {
   id: 4,
-  name: 'solace',
+  username: 'solace',
   emailAddress: 'solace@gmail.com',
   password: 'solace123',
 }

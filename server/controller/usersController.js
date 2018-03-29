@@ -5,14 +5,14 @@ import users from '../models/users';
 class Users {
 
   /**
-   * @returns {object} registerUser
+   * @returns {object} registerUsers
    * @param {*} req
    * @param {*} res
    */
   static registerUsers(req, res) {
     users.push({
       id: users.length + 1,
-      name: req.body.name,
+      username: req.body.name,
       emailAddress: req.body.emailAddress,
       password: req.body.password
     });
@@ -20,7 +20,6 @@ class Users {
       message: 'account created successfully,'
     });
   }
-
   /**
    * @returns {Object} loginUser
    * @param {*} req
@@ -28,7 +27,7 @@ class Users {
    */
   static loginUsers(req, res) {
     for (let i = 0; i < users.length; i += 1) {
-      if (users[i].name === req.body.name && users[i].password === req.body.password) {
+      if (users[i].username === req.body.username && users[i].password === req.body.password) {
         return res.status(200).json({
           message: 'Account login successful'
         });
