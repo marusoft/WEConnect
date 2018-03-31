@@ -20,8 +20,8 @@ describe('Test all users APIs', () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.an('object');
-          done();
         });
+      done();
     });
 
     it('should return an error with 400 status code', (done) => {
@@ -32,8 +32,9 @@ describe('Test all users APIs', () => {
           res.should.have.status(400);
           res.body.should.be.an('object');
           res.body.should.have.property('message');
-          done();
+
         });
+      done();
     });
   });
 
