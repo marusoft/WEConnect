@@ -18,7 +18,7 @@ app.use(expressValidator());
 routes(app);
 
 app.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the beginning of awesome things.',
+  message: 'Welcome to the beginning of awesome things on weconnect app.',
 }));
 
 export default app;
