@@ -76,9 +76,9 @@ span.italic {
   padding: 0 !important;
 }
 
-nav{
+/* nav{
   height: 80px;
-}
+} */
 
 #top-header {
   position: fixed;
@@ -428,7 +428,7 @@ h2{
 }
 
 #footer{
-  background-color:#42a5f5;
+  background-color:#0066cc;
   height: 60px;
   margin-top: 20px;
 }
