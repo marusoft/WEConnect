@@ -101,7 +101,7 @@ class Businesses {
       peruseBusiness.location = req.body.location;
       peruseBusiness.category = req.body.category;
       peruseBusiness.photo = req.body.photo;
-      peruseBusiness.email = req.body.ema;
+      peruseBusiness.email = req.body.email;
       return res.status(200)
         .json({
           peruseBusiness,

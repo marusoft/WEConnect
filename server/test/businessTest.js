@@ -79,9 +79,9 @@ describe('PUT /businesses/<businessId> API to update business', () => {
         id: 4,
         name: ' ',
         photo: 'Zenithal.jpg',
-        description: 'pre-schooler and basic',
-        category: 'Education',
         location: 'lagos',
+        category: 'Education',
+        description: 'pre-schooler and basic',
         email: 'zenithal@gmail.com',
       })
       .end((err, res) => {
