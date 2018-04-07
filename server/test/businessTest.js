@@ -7,7 +7,7 @@ const should = chai.should(); // eslint-disable-line no-unused-var
 chai.use(chaiHttp);
 
 describe('register a business POST /businesses/ ', () => {
-  it('Should return 201 for a sucessful post', (done) => {
+  it('Should return 201 for a successful post', (done) => {
     chai.request(app)
       .post('/api/v1/businesses')
       .send({
@@ -23,7 +23,7 @@ describe('register a business POST /businesses/ ', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.be.a('string');
-        res.body.should.be.eql('Business added successfully');
+        res.body.should.be.eql('Business created successfully');
       });
     done();
   });
@@ -72,7 +72,7 @@ describe('PUT /businesses/<businessId> API to update business', () => {
       });
     done();
   });
-  it('Should return 200 if successful', (done) => {
+  it('Should return 400 for PUT without business update', (done) => {
     chai.request(app)
       .put('/api/v1/businesses/1')
       .send({
@@ -86,6 +86,8 @@ describe('PUT /businesses/<businessId> API to update business', () => {
       })
       .end((err, res) => {
         res.should.have.status(400);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business update was not successful');
       });
     done();
   });
@@ -97,6 +99,8 @@ describe('DELETE /businesses/<businessId> API to remove a business', () => {
       .delete('/api/v1/businesses/1')
       .end((err, res) => {
         res.should.have.status(200);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business deleted successfully');
 
       });
     done();
@@ -106,6 +110,8 @@ describe('DELETE /businesses/<businessId> API to remove a business', () => {
       .delete('/api/v1/businesses/50')
       .end((err, res) => {
         res.should.have.status(404);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business details to be deleted was not found');
 
       });
     done();
@@ -113,7 +119,7 @@ describe('DELETE /businesses/<businessId> API to remove a business', () => {
 });
 
 describe('register a business POST /businesses/ ', () => {
-  it('Should return 201 for a sucessful post', (done) => {
+  it('Should return 201 for a successful post', (done) => {
     chai.request(app)
       .post('/api/v1/businesses')
       .send({

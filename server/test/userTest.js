@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('Test all users APIs', () => {
   describe('/POST route register user', () => {
     const newUser = {
-      name: 'solace',
+      username: 'solace',
       emailAddress: 'solace@gmail.com',
       password: 'alimikehinde',
     };
@@ -40,12 +40,14 @@ describe('Test all users APIs', () => {
 
   describe('/POST route login user', () => {
     const user = {
-      name: 'marusoft',
+      username: 'marusoft',
+      emailAddress: 'marusoft@gmail.com',
       password: 'marusoft'
     };
     const notUser = {
-      email: 'wrong',
-      password: 'unknown@gmail.com'
+      username: 'disguise',
+      emailAddress: 'unknown@gmail.com',
+      password: 'wrong1223345678900'
     };
     it('should return welcome with username and 200 status code', (done) => {
       chai.request(app)
