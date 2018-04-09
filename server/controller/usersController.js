@@ -14,7 +14,7 @@ class Users {
       id: users.length + 1,
       username: req.body.name,
       emailAddress: req.body.emailAddress,
-      password: req.body.password
+      password: req.body.password,
     });
     return res.status(201).json({
       message: 'account created successfully,'
