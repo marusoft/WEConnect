@@ -4,7 +4,7 @@
   "description": "WeConnect provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node app.js",
+    "start": "babel-node ./server/bin/www",
     "start:dev": "nodemon --watch server --exec babel-node ./server/bin/www",
     "lint": "eslint ./ || true",
     "test": "nyc --reporter=html --reporter=text mocha server/test/ --exit --compilers js:babel-core/register",
