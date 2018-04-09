@@ -250,3 +250,73 @@ describe('register a business POST /businesses/ ', () => {
   });
 });
 
+describe('Sort Business by location and category', () => {
+  it('Return 200 for successful search by location', (done) => {
+    chai.request(app)
+      .get('/api/v1/businesses?location=lagos')
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  });
+  it('Return 200 for successful search by category', (done) => {
+    chai.request(app)
+      .get('/api/v1/businesses?category=entertainment')
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  });
+  it('Return 406 for unsuccessful search by category', (done) => {
+    chai.request(app)
+      .get('/api/v1/businesses?category=entertainment&location=abcd')
+      .end((err, res) => {
+        res.should.have.status(406);
+        expect(res.body.status).to.equal('Fail');
+        expect(res.body.message).to.equal('The location and category matching does not exist');
+        done();
+      });
+  });
+  it('Return 406 for non-existing category', (done) => {
+    chai.request(app)
+      .get('/api/v1/businesses?category=abcd')
+      .end((err, res) => {
+        expect(res.status).to.equal(406);
+        expect(res.body.status).to.equal('Fail');
+        done();
+      });
+  });
+  it('Return 406 for non-existing location', (done) => {
+    chai.request(app)
+      .get('/api/v1/businesses?location=abcd')
+      .end((err, res) => {
+        expect(res.status).to.equal(406);
+        expect(res.body.status).to.equal('Fail');
+        done();
+      });
+  });
+});
+describe('DELETE /businesses/<businessId> API to remove a business', () => {
+  it('Should return 200 for succesful delete request ', (done) => {
+    chai.request(app)
+      .delete('/api/v1/businesses/1')
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business deleted successfully');
+
+      });
+    done();
+  });
+  it('Should return 404 if parameter is not found', (done) => {
+    chai.request(app)
+      .delete('/api/v1/businesses/50')
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('Business details to be deleted was not found');
+
+      });
+    done();
+  });
+});
