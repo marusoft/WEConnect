@@ -15,3 +15,28 @@ client - front-end implementation in ReactJS and Redux
 
 **WEConnect App UI Template**
 The gh-pages branch contains the template UI link https://marusoft.github.io/WEConnect/template
+
+
+
+**Getting Started**
+Before installing, Clone this repo and install Node.js.
+
+**Installation**
+
+Install
+npm install 
+
+**Features**
+
+Users can view businesses
+Users can post a business
+Users can review a business
+Users can delete a business
+Users can search for a business
+Users can search for a business by category
+Users can search for a business by location
+
+**Run App( with dummy-data)**
+
+npm run start
+Run Test
