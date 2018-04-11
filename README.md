@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/marusoft/WEConnect.svg?branch=develop)](https://travis-ci.org/marusoft/WEConnect) [![Coverage Status](https://coveralls.io/repos/github/marusoft/WEConnect/badge.svg)](https://coveralls.io/github/marusoft/WEConnect) [!
-[Maintainability](https://api.codeclimate.com/v1/badges/535a9d9f12d5605731d5/maintainability)](https://codeclimate.com/github/marusoft/WEConnect/maintainability) 
+[![Build Status](https://travis-ci.org/marusoft/WEConnect.svg?branch=develop)](https://travis-ci.org/marusoft/WEConnect) [![Coverage Status](https://coveralls.io/repos/github/marusoft/WEConnect/badge.svg)](https://coveralls.io/github/marusoft/WEConnect) [![Maintainability](https://api.codeclimate.com/v1/badges/535a9d9f12d5605731d5/maintainability)](https://codeclimate.com/github/marusoft/WEConnect/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/535a9d9f12d5605731d5/test_coverage)](https://codeclimate.com/github/marusoft/WEConnect/test_coverage)
 
 
 # WEConnect
