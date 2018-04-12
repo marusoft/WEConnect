@@ -23,7 +23,7 @@ const businesses = [{
   description: 'a company responsible for easy transfer of goods and services',
   category: 'Transportation',
   location: 'lagos',
-  email: 'awesome@haulage.com',
+  email: 'awesome@haulage.com'
 },
 {
   id: 4,
@@ -32,7 +32,7 @@ const businesses = [{
   description: 'pre-schooler and basic',
   category: 'Education',
   location: 'lagos',
-  email: 'zenithal@gmail.com',
+  email: 'zenithal@gmail.com'
 },
 {
   id: 5,
@@ -41,7 +41,7 @@ const businesses = [{
   description: 'a company that satchet and bottled water',
   category: 'Food',
   location: 'lagos',
-  email: 'seven&eight@gmail.com',
+  email: 'seven&eight@gmail.com'
 }
 ];
 
